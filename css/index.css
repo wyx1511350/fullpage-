@@ -1,0 +1,147 @@
+/*定义每一屏都有的背景球*/
+.bg-ball div{
+    border-radius: 50%;
+    background-image: linear-gradient(red,blue,yellow,green);
+    position: absolute;
+    animation:leftMove 10s linear infinite;
+}
+.bg-ball div:nth-child(1){
+    width: 60px;
+    height: 60px;
+    top: 5%;
+    left: 10%;
+}
+.bg-ball div:nth-child(2){
+    width: 130px;
+    height: 130px;
+    top: 26%;
+    left: 20%;
+}
+.bg-ball div:nth-child(3){
+    width: 140px;
+    height: 140px;
+    top: 30%;
+    left: 24%;
+}
+.bg-ball div:nth-child(4){
+    width: 260px;
+    height: 260px;
+    top: 50%;
+    left: 50%;
+}
+.bg-ball div:nth-child(5){
+    width: 180px;
+    height: 180px;
+    top: 15%;
+    right: 10%;
+}
+.bg-ball div:nth-child(6){
+    width: 160px;
+    height: 160px;
+    top: 25%;
+    right: 14%;
+}
+@keyframes leftMove {/*创建动画函数*/
+    from{
+
+    }
+    to{
+        transform: translateX(-1400px) rotate(720deg);
+    }
+}
+.rotate{
+    transform: rotate(-30deg);
+}
+
+/*设置视距，实现近大远小的效果*/
+.s1,.s2,.s3{
+    perspective:1000px;
+}
+/*第一屏的样式*/
+.s1 .s1-box{
+    width: 880px;
+    height: 320px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+}
+.s1-box img:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.s1 .s1-box-start{
+    transform: translate3d(-50%,-50%,800px) rotateY(180deg);
+}
+
+/*第二屏的样式*/
+.s2 .s2-box{
+    width: 316px;
+    height: 362px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+}
+.s2 .s2-box-start{
+    transform: translate3d(-50%,-50%,-8000px);/*这里之所以加上-50%,-50%是为了显示上面被覆盖的样式*/
+}
+.s2 .s2-box-finish{
+    transform: translate3d(-50%,-50%,1000px);
+}
+
+/*第三屏的样式*/
+.s3 .s3-box{
+    width: 1300px;
+    height: 800px;
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    border: 1px solid #000;
+    transform: rotateX(30deg);
+    transition: all 1s;
+}
+.s3-box img:nth-child(2){
+    position: absolute;
+    left: -23%;
+    top: 12%;
+    transition: all 1s;
+}
+.s3 .s3-box-start{
+    transform: translate(1400px,1600px) rotateX(30deg);
+}
+.s3 .s3-box-start img:nth-child(2){
+    transform: translate(-1600px,1000px);
+}
+
+/*第四屏的样式*/
+.s4 .s4-box{
+    width: 620px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+}
+.s4-box img{
+    position: absolute;
+}
+.s4-box img:nth-child(2){
+    left: 0;
+    top: 50%;
+}
+.s4-box img:nth-child(4){
+    right: 0;
+    top: 10%;
+}
+.s4-box img:nth-child(5){
+    left: 0;
+    bottom: 0;
+}
+.s4 .s4-box-start{
+    transform: translate(-180%,-50%) rotate(30deg);
+}
